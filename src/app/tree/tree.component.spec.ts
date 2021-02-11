@@ -9,16 +9,14 @@ describe('TreeComponent', () => {
   let component: TreeComponent;
   let fixture: ComponentFixture<TreeComponent>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      declarations: [ TreeComponent ],
-      imports: [
-        MatButtonModule,
-        MatIconModule,
-        MatTreeModule,
-      ]
-    }).compileComponents();
-  }));
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [TreeComponent],
+        imports: [MatButtonModule, MatIconModule, MatTreeModule],
+      }).compileComponents();
+    })
+  );
 
   beforeEach(() => {
     fixture = TestBed.createComponent(TreeComponent);

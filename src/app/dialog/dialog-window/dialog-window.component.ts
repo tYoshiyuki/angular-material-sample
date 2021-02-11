@@ -8,10 +8,8 @@ export interface DialogData {
 @Component({
   selector: 'app-dialog-window',
   templateUrl: './dialog-window.component.html',
-  styleUrls: ['./dialog-window.component.less']
+  styleUrls: ['./dialog-window.component.less'],
 })
 export class DialogWindowComponent {
-
   constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) {}
-
 }

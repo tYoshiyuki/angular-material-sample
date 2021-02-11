@@ -7,8 +7,10 @@ import { Overlay, OverlayRef } from '@angular/cdk/overlay';
 
 @Injectable()
 export class LoadingService {
-
-  constructor(private dynamicOverlay: DynamicOverlay, private overlay: Overlay) { }
+  constructor(
+    private dynamicOverlay: DynamicOverlay,
+    private overlay: Overlay
+  ) {}
 
   public showGlobal(): OverlayRef {
     const overlayRef = this.overlay.create({
@@ -17,7 +19,7 @@ export class LoadingService {
         .global()
         .centerHorizontally()
         .centerVertically(),
-      hasBackdrop: true
+      hasBackdrop: true,
     });
     overlayRef.attach(new ComponentPortal(LoadingComponent));
     return overlayRef;
@@ -30,20 +32,19 @@ export class LoadingService {
   public show(elRef: ElementRef): LoadingRef | null {
     if (elRef) {
       const result: LoadingRef = { subscription: null, overlayRef: null };
-      result.subscription = timer(500)
-        .subscribe(() => {
-          this.dynamicOverlay.setContainerElement(elRef.nativeElement);
-          const positionStrategy = this.dynamicOverlay
-            .position()
-            .global()
-            .centerHorizontally()
-            .centerVertically();
-          result.overlayRef = this.dynamicOverlay.create({
-            positionStrategy,
-            hasBackdrop: true
-          });
-          result.overlayRef.attach(new ComponentPortal(LoadingComponent));
+      result.subscription = timer(500).subscribe(() => {
+        this.dynamicOverlay.setContainerElement(elRef.nativeElement);
+        const positionStrategy = this.dynamicOverlay
+          .position()
+          .global()
+          .centerHorizontally()
+          .centerVertically();
+        result.overlayRef = this.dynamicOverlay.create({
+          positionStrategy,
+          hasBackdrop: true,
         });
+        result.overlayRef.attach(new ComponentPortal(LoadingComponent));
+      });
       return result;
     } else {
       return null;

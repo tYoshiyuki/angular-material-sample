@@ -9,11 +9,11 @@ const routes: Routes = [
   { path: '', component: DashboardComponent },
   { path: 'form', component: FormComponent },
   { path: 'table', component: TableComponent },
-  { path: 'tree', component: TreeComponent }
+  { path: 'tree', component: TreeComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

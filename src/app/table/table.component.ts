@@ -1,4 +1,10 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
@@ -8,7 +14,7 @@ import { LoadingService } from '../loading/loading.service';
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
-  styleUrls: ['./table.component.less']
+  styleUrls: ['./table.component.less'],
 })
 export class TableComponent implements AfterViewInit, OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -20,9 +26,10 @@ export class TableComponent implements AfterViewInit, OnInit {
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
   displayedColumns = ['id', 'name'];
 
-  constructor(private loadingService: LoadingService,
-              private hostElement: ElementRef) {
-  }
+  constructor(
+    private loadingService: LoadingService,
+    private hostElement: ElementRef
+  ) {}
 
   ngOnInit() {
     this.dataSource = new TableDataSource();
@@ -36,11 +43,11 @@ export class TableComponent implements AfterViewInit, OnInit {
 
   showLoading() {
     const loadingRef = this.loadingService.show(this.target);
-    setTimeout(() => this.loadingService.hide(loadingRef),3000);
+    setTimeout(() => this.loadingService.hide(loadingRef), 3000);
   }
 
   showLoadingGlobal() {
     const overlayRef = this.loadingService.showGlobal();
-    setTimeout(() => this.loadingService.hideGlobal(overlayRef),3000);
+    setTimeout(() => this.loadingService.hideGlobal(overlayRef), 3000);
   }
 }
