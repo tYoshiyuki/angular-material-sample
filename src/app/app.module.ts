@@ -34,8 +34,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { LoadingService } from './loading/loading.service';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle'
-import { MatCheckboxModule } from '@angular/material/checkbox'
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -75,11 +75,9 @@ import { MatCheckboxModule } from '@angular/material/checkbox'
     MatDatepickerModule,
     MatNativeDateModule,
     MatSlideToggleModule,
-    MatCheckboxModule
+    MatCheckboxModule,
   ],
-  providers: [
-    LoadingService,
-  ],
-  bootstrap: [AppComponent]
+  providers: [LoadingService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
