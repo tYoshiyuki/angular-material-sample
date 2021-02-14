@@ -18,6 +18,9 @@ import { DynamicOverlayContainer } from './dynamic-overlay-container';
 import { Directionality } from '@angular/cdk/bidi';
 import { DOCUMENT, Location } from '@angular/common';
 
+/**
+ * Overlayでコンポーネントを動的に指定するためのクラスです。
+ */
 @Injectable({
   providedIn: 'root',
 })
@@ -58,7 +61,13 @@ export class DynamicOverlay extends Overlay {
     this._dynamicOverlayContainer = _overlayContainer;
   }
 
+  /**
+   * ローディング表示対象となるOverlayContainerを指定します。
+   *
+   * @param containerElement
+   */
   public setContainerElement(containerElement: HTMLElement): void {
+    // ローディングコンポーネントを最前面に表示します
     this.renderer.setStyle(containerElement, 'transform', 'translateZ(0)');
     // eslint-disable-next-line no-underscore-dangle
     this._dynamicOverlayContainer.setContainerElement(containerElement);

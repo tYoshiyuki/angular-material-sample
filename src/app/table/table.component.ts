@@ -42,12 +42,12 @@ export class TableComponent implements AfterViewInit, OnInit {
   }
 
   showLoading() {
-    const loadingRef = this.loadingService.show(this.target);
-    setTimeout(() => this.loadingService.hide(loadingRef), 3000);
+    const overlayRef = this.loadingService.show(this.target);
+    setTimeout(() => this.loadingService.hide(overlayRef), 3000);
   }
 
   showLoadingGlobal() {
     const overlayRef = this.loadingService.showGlobal();
-    setTimeout(() => this.loadingService.hideGlobal(overlayRef), 3000);
+    setTimeout(() => this.loadingService.hide(overlayRef), 3000);
   }
 }
