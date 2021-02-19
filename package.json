@@ -8,7 +8,9 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "prettier:ts": "prettier --write \"./src/**/*.ts\""
+    "prettier": "prettier --write \"./src/**/*{.ts,*.html,*.less}\"",
+    "prettier:ts": "prettier --write \"./src/**/*.ts\"",
+    "prettier:html": "prettier --write \"./src/**/*.html\""
   },
   "private": true,
   "dependencies": {
