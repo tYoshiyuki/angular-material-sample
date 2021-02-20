@@ -36,7 +36,7 @@ export class LoadingService {
    * @param overlayRef
    */
   hide(overlayRef: OverlayRef | null) {
-    if (overlayRef){
+    if (overlayRef) {
       overlayRef.detach();
     }
   }
