@@ -17,3 +17,27 @@ $custom-typography: mat-typography-config(
 );
 
 @include angular-material-typography($custom-typography);
+
+.mat-display-4,
+.mat-display-3,
+.mat-display-2,
+.mat-display-1,
+.mat-small,
+.mat-caption {
+  opacity: 0.54;
+}
+
+.mat-h1,
+.mat-headline,
+.mat-h2,
+.mat-title,
+.mat-h3,
+.mat-subheading-2,
+.mat-h4,
+.mat-subheading-1,
+.mat-body,
+.mat-body-1,
+.mat-body-strong,
+.mat-body-2 {
+  opacity: 0.87;
+}
